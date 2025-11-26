@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('homepage');
-Route::get('/chi siamo', function () {
+Route::get('/chi-siamo', function () {
     $users = [
         [
             'name' => 'Mario',
@@ -35,7 +35,7 @@ Route::get('/chi siamo', function () {
     return view('about-us', ['users' => $users]);
 })->name('aboutUs');
 
-Route::get('/chi-siamo/datail/{name}', function ($name) {
+Route::get('/chi-siamo/detail/{name}', function ($name) {
     $users = [
         [
             'name' => 'Mario',
@@ -62,3 +62,97 @@ Route::get('/chi-siamo/datail/{name}', function ($name) {
 Route::get('/contatti', function () {
     return view('contacts');
 })->name('contacts');
+
+Route::get('/movies', function () {
+    $movies = [
+        [
+            'id' => '1',
+            'title' => 'Incontri ravvicinati del terzo tipo',
+            'director' => 's. MoviesIcons',
+            'img' => '/media/poster/MovieIcons.jpg.jpg',
+            'genres' => 'sci-fi'
+        ],
+        [
+            'id' => '2',
+            'title' => 'immaginidelci',
+            'director' => 's. Mendes',
+            'img' => '/media/poster/vikings03.jpg',
+            'genres' =>
+                'Guerra'
+        ],
+        [
+            'id' => '3',
+            'title' => 'Quei bravi ragazzi',
+            'director' => 'M. ket-har',
+            'img' => '/media/poster/ket-har.jpg',
+            'genres' =>
+                'noir'
+        ],
+        [
+            'id' => '4',
+            'title' => 'Barbi',
+            'director' => 'G. vikings01',
+            'img' => '/media/poster/vikings01.jpg',
+            'genres' =>
+                'Avventura'
+        ],
+        [
+            'id' => '5',
+            'title' => 'lost in translation',
+            'director' => 's. vikings02',
+            'img' => '/media/poster/vikings02.jpg',
+            'genres' =>
+                'Drammatico'
+        ],
+    ];
+    return view('movie.movies', ['movies' => $movies]);
+})->name('movie.list');
+
+Route::get('/movies/detail/{id}', function ($id) {
+    $movies = [
+        [
+            'id' => '1',
+            'title' => 'Incontri ravvicinati del terzo tipo',
+            'director' => 's. MoviesIcons',
+            'img' => '/media/poster/MovieIcons.jpg.jpg',
+            'genres' => 'sci-fi'
+        ],
+        [
+            'id' => '2',
+            'title' => 'immaginidelci',
+            'director' => 's. Mendes',
+            'img' => '/media/poster/vikings03.jpg',
+            'genres' =>
+                'Guerra'
+        ],
+        [
+            'id' => '3',
+            'title' => 'Quei bravi ragazzi',
+            'director' => 'M. ket-har',
+            'img' => '/media/poster/ket-har.jpg',
+            'genres' =>
+                'noir'
+        ],
+        [
+            'id' => '4',
+            'title' => 'Barbi',
+            'director' => 'G. vikings01',
+            'img' => '/media/poster/vikings01.jpg',
+            'genres' =>
+                'Avventura'
+        ],
+        [
+            'id' => '5',
+            'title' => 'lost in translation',
+            'director' => 's. vikings02',
+            'img' => '/media/poster/vikings02.jpg',
+            'genres' =>
+                'Drammatico'
+        ],
+    ];
+    foreach ($movies as $movie) {
+        if ($id == $movie['id']) {
+            return view('movie.movie-detail', ['movie' => $movie]);
+        }
+    }
+})->name('movie.detail');

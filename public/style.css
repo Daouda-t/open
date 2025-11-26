@@ -33,3 +33,19 @@
 .userHeight {
     height: 70vh;
 }
+
+/* movies */
+.movies {
+    background-image: url('/media/cinemage.jpg');
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.cardImg {
+    height: 250px;
+    object-position: center;
+
+}

@@ -49,54 +49,22 @@
             </div>
         </div>
     </nav>
-    <a class="navbar-brand" href="/"><i class="bi bi-camera-reels-fill"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/chi-siamo">chi siamo</a>
 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contatti">contatti</a>
-
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </li>
-
-        </ul>
-
-    </div>
-    </div>
-    </nav>
-    <header>
-        <div class="container-fluid header">
-            <div class="row h-100 justify-content-center align-items-center">
-                <div class="col-md-6 col-12">
-                    <h3 class="text-white text-center text-color">{{ $user['name'] }} {{$user['surname']}}</h3>
-                    <h4 class="text-white text-center text-color">{{$user['role'] }}</h4>
-                </div>
+    <div class="container-fluid header">
+        <div class="row h-100 justify-content-center">
+            <div class="row">
+                <h2 class="display-5 text-white text-cente text-color">detailgli del film:{{$movie['title']}}</h2>
+            </div>
+            <div class="col-12 col-md-6 text-white d-flex flex-column justify-content-center align-items-center">
+                <h3>Titolo:{{ $movie['title'] }}</h3>
+                <h4>Regista:{{ $movie['director'] }}</h4>
+                <p>Genere:{{$movie['genres'] }}</p>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <img src="{{$movie['img']}}" alt="poster di {{$movie['title']}}">
             </div>
         </div>
-    </header>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
