@@ -48,6 +48,7 @@
 
             </div>
         </div>
+        <x-layout>
     </nav>
     <a class="navbar-brand" href="/"><i class="bi bi-camera-reels-fill"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -104,3 +105,5 @@
 </body>
 
 </html>
+
+</x-layout>
